@@ -1,0 +1,16 @@
+<!-- <form [formGroup]="formGroupObject" > -->
+  <!-- {{forms[0] |json}} -->
+  <button (click)="createForms()" >Add another form</button>
+  <div *ngFor="let content of forms">
+    <!-- {{content | json}} -->
+
+    <div *ngFor="let elem of content | keyvalue">
+      <label for="">{{elem.key}}</label>
+      <input [formControl]="elem.value" type="text">
+      <!-- {{elem.value | json}}
+      {{elem.value.value}} -->
+    </div>
+  </div>
+  <button (click)="getData()" >Get Data</button>
+  {{formValues | json}}
+<!-- </form> -->
